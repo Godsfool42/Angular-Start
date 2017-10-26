@@ -1,0 +1,22 @@
+<div class = 'panel panel-primary' *ngIf ="product">
+  <div class = 'panel panel-heading'>
+    {{pageTitle + ":" + product.productName}}
+  </div>
+
+  <div class = 'panel panel-body'>
+    <ul class="list-group">
+      <li class="list-group-item">Product: {{product.productName}}</li>
+      <li class="list-group-item">Code: {{product.productCode}}</li>
+      <li class="list-group-item">Price: {{product.price | currency:'USD':true:'1.2-2'}}</li>
+    </ul>
+    <img class = "center-block"
+         [src]="product.imageUrl"
+         [title] = "product.productName"
+         [style.width.px] = "imageWidth"
+         [style.margin.px] = "imageMargin">
+  <div class = "panel-footer">
+    <a class = "btn btn-default" (click)="onBack()" stle = 'width:80px'>
+      <i class = "glyphicon glyphicon-chevron-left"></i> Back
+    </a>
+  </div>
+</div>
